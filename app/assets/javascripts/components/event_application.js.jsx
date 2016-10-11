@@ -1,5 +1,5 @@
 var EventApplication = React.createClass({
-  getIntialState: function() {
+  getInitialState: function() {
     return { events: [] };
   },
   componentDidMount: function() {
@@ -10,7 +10,7 @@ var EventApplication = React.createClass({
     $.ajax({
       url: '/api/events',
       success: function(data) {
-        self.setState({ events: data});
+        self.setState({ events: data });
       },
       error: function(xhr, status, error) {
         alert('Cannot get data from API: ', error);
