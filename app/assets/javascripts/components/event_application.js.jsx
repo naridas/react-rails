@@ -3,7 +3,7 @@ var EventApplication = React.createClass({
     return { events: [] };
   },
   componentDidMount: function() {
-    this.getDataFromApi()''
+    this.getDataFromApi();
   },
   getDataFromApi: function() {
     var self = this;
@@ -11,6 +11,9 @@ var EventApplication = React.createClass({
       url: '/api/events',
       success: function(data) {
         self.setState({ events: data});
+      },
+      error: function(xhr, status, error) {
+        alert('Cannot get data from API: ', error);
       }
     });
   },
